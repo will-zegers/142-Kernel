@@ -106,20 +106,18 @@ long device_ioctl(struct file *file,
 		break;
 	
 	case IOCTL_SENDER_IN:
-		sender++;
+		sender=1;
 		break;
 	
 	case IOCTL_SENDER_OUT:
-		if (sender > 0)
-			sender--;
+		sender=0;
 		break;
 	
 	case IOCTL_RECEIVER_IN:
-		receiver++;
+		receiver=1;
 		break;
 	case IOCTL_RECEIVER_OUT:
-		if (receiver > 0)
-			receiver--;
+		receiver=0;
 		break;
 	}
 
