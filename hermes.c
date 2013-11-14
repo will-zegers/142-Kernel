@@ -5,7 +5,7 @@
 
 #include "hermes.h"
 #define DEVICE_NAME "hermes"
-#define BUF_LEN 80
+#define BUF_LEN 42
 
 static int Device_Open = 0;
 

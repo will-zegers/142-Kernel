@@ -6,7 +6,7 @@
 main()
 {
 	int file_desc, ret_val;
-	char *msg = (char *)malloc(80 * sizeof(char));
+	char *msg = (char *)malloc(42 * sizeof(char));
 	
 	while (1) {
 	
