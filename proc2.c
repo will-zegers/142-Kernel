@@ -32,5 +32,6 @@ void main()
 		
 		ioctl(file_desc, IOCTL_SENDER_OUT, NULL);
 		close(file_desc);
+		*message = NULL;
 	}
 }

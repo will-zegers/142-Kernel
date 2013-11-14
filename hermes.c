@@ -93,6 +93,7 @@ long device_ioctl(struct file *file,
 			break;
 		} else {
 			printk(KERN_ALERT "No receivers have checked in!\n");
+			break;
 		}	
 
 	case IOCTL_GET_MSG:
@@ -100,10 +101,11 @@ long device_ioctl(struct file *file,
 			i = device_read(file, (char *)ioctl_param, 99, 0);
 
 			put_user('\0', (char *)ioctl_param + i);
+			break;
 		} else {
 			printk(KERN_ALERT "No senders have checked in!\n");
+			break;
 		}	
-		break;
 	
 	case IOCTL_SENDER_IN:
 		sender=1;
