@@ -1,4 +1,7 @@
-#include "ioctl.h"
+#include "hermes.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/ioctl.h>
 
 main()
 {
@@ -17,8 +20,13 @@ main()
 			exit(-1);
 		}
 
+		ret_val = ioctl(file_desc, IOCTL_SET_MSG, msg);
 
-		ioctl_set_msg(file_desc, msg);
+	        if (ret_val < 0) {
+	                printf("ioctl_set_msg failed:%d\n", ret_val);
+	                exit(-1);
+ 	       }
+
 
 		ioctl(file_desc, IOCTL_RECEIVER_OUT, NULL);
 		close(file_desc);
